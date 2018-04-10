@@ -7,6 +7,7 @@ import 'menu.dart';
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
+
   void SetupWindow() {
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeRight,
@@ -20,8 +21,14 @@ class MyApp extends StatelessWidget {
     SetupWindow();
     return new MaterialApp(
       title: 'Comap demo',
+      color: Colors.white,
       theme: new ThemeData(
+//        brightness: Brightness.dark,
+        textTheme: new TextTheme(title: new TextStyle(color: Colors.white)),
         primarySwatch: Colors.red,
+        buttonColor: Colors.red[600],
+        splashColor: Colors.transparent,
+
       ),
       home: new LoadscreenPage(),
     );
@@ -50,7 +57,6 @@ class _LoadscreenPageSate extends State<LoadscreenPage> {
   }
 
   void switchMenu() {
-    print("aloha");
     Navigator.push(
       context,
       new MaterialPageRoute(builder: (context) => new MenuScreen()),
